@@ -1,0 +1,14 @@
+= Update the Hosted Cluster
+
+
+[[review-update]]
+== Review the Update Process
+
+
+
+
+[[apply-update]]
+== Apply the Cluster Update
+
+
+

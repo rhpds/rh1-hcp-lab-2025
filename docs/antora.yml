@@ -1,5 +1,5 @@
-name: redhat-scholars-ui
-title: RedHat Scholars UI
+name: Lab 01
+title: OpenShift on OpenShift with Hosted Control Planes
 version: master
 nav:
   - modules/ROOT/nav.adoc

@@ -1,0 +1,10 @@
+= Configure the Hosted Cluster
+
+
+[[local-auth]]
+== Configure Authentication
+
+
+
+[[test-auth]]
+== Test Authentication

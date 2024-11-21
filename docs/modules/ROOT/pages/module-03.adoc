@@ -1,0 +1,16 @@
+= Scaling the Cluster
+
+
+
+[[explore-autoscale]]
+== Explore Autoscaling
+
+
+
+[[deploy-app]]
+== Deploy a Resource-Intensive Application
+
+
+
+[[clean-up]]
+== Delete the Application and Scale Down the Cluster
