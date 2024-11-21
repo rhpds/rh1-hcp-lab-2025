@@ -1,5 +1,0 @@
-name: Lab 01
-title: OpenShift on OpenShift with Hosted Control Planes
-version: master
-nav:
-  - modules/ROOT/nav.adoc
