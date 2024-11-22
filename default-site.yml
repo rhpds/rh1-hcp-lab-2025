@@ -1,6 +1,6 @@
 ---
 site:
-  title: Lab01: OpenShift on OpenShift with Hosted Control Planes
+  title: "Lab01: OpenShift on OpenShift with Hosted Control Planes"
   url: https://redhat-scholars.github.io/course-template
   start_page: modules::index.adoc
 
