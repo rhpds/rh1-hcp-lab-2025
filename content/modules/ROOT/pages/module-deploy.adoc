@@ -38,7 +38,7 @@ image::deploy/acm_default_window.png[link=self, window=blank, width=100%]
 . The *Overview* tab for the local cluster will show you the status of the environment, the console URL for direct login, as well as information about the hosting environment, the current release information, and information about the number of nodes and applications currently deployed on the cluster.
 +
 image::deploy/local_cluster_overview.png[link=self, window=blank, width=100%] 
-
++
 NOTE: For the purpose of this lab please note that we are hosting the environment in Google Cloud. This is not a supported environment for production use at this time. For production use, please see the release notes available https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html-single/hosted_control_planes/index[here^]
 
 . Click on the *Add-ons* tab, in the list you will see the *hypershift-addon* listed. This is required for the deployment of Hosted Control Planes.
