@@ -40,7 +40,6 @@ image::deploy/acm_default_window.png[link=self, window=blank, width=100%]
 image::deploy/local_cluster_overview.png[link=self, window=blank, width=100%] 
 
 NOTE: For the purpose of this lab please note that we are hosting the environment in Google Cloud. This is not a supported environment for production use at this time. For production use, please see the release notes available https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html-single/hosted_control_planes/index[here^]
-+
 
 . Click on the *Add-ons* tab, in the list you will see the *hypershift-addon* listed. This is required for the deployment of Hosted Control Planes.
 +
@@ -117,7 +116,7 @@ image::deploy/create_node_pools.png[link=self, window=blank, width=100%]
 
 . The next screen shown will allow you to review the deployment configuration by providing a review of the *Cluster details* and the *Node pools* that you have configured. If all looks good upon review, click the *Create* button to begin provisioning your hosted cluster.
 +
-image::deploy/create_cluster_review.png[link=self, window=blanknode_pools
+image::deploy/create_cluster_review.png[link=self, window=blank, width=100%]
  
 
 
