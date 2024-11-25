@@ -16,3 +16,31 @@
 
 [[arc-con]]
 == Architectural Concepts
+
+
+[[lab-info]]
+== Requirements for the Lab Environment
+
+* Please read all instructions carefully when carrying out assigned tasks and do not only focus on the images provided.
+* If you are stuck and need assistance, please raise your hand and a proctor will see to you as soon as possible.
+* Each participant needs to have their own computer with a web browser and internet access.
+* Chromium based browsers are recommended for best performance.
+
+=== Credentials for the OpenShift Console
+
+Your OpenShift cluster console is available {openshift_web_console}[here^].
+
+An administrator user has been configured, and login is available with the following credentials:
+
+* *User:* {openshift_admin_user}
+* *Password:* {openshift_admin_password}
+
+=== Bastion Access
+
+A RHEL bastion host is available with common utilities pre-installed and OpenShift command line access pre-configured {bastion_public_hostname}[here^]
+
+For SSH access to the bastion when needed, use the following credentials:
+
+* *User:* {bastion_ssh_user_name}
+* *Password:* {bastion_ssh_password}
+
