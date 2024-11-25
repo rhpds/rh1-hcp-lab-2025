@@ -11,12 +11,12 @@ The beginning section of this lab will introduce you to the basics of using Adva
 
 As a reminder, here are your credentials for the OpenShift Console:
 
-Your OpenShift cluster console is available {openshift_web_console}[here^].
+Your OpenShift cluster console is available {openshift_cluster_console_url}[here^].
 
 Administrator login is available with:
 
-* *User:* {openshift_admin_user}
-* *Password:* {openshift_admin_password}
+* *User:* {openshift_cluster_admin_username}
+* *Password:* {openshift_cluster_admin_password}
 
 [[deploy-prereqs]]
 == Prerequisites for Deployment
@@ -29,26 +29,22 @@ image::deploy/console_login.png[link=self, window=blank, width=100%]
 +
 image::deploy/cluster_create_popup.png[link=self, window=blank, width=100%]
 
-
 . Your initial landing page will be on the ACM default view for All Clusters. Currently the only cluster being managed is the local cluster that we are running on.
 
 . Click on the *local-cluster* to find out more information about it.
 +
 image::deploy/acm_default_window.png[link=self, window=blank, width=100%]
 
-
-. The *Overview* tab for the local cluster will show you the status of the environment, the console URL for direct login, as well the hosting environment, and the current release information, and information about the number of nodes and applications currently deployed on the cluster.
+. The *Overview* tab for the local cluster will show you the status of the environment, the console URL for direct login, as well as information about the hosting environment, the current release information, and information about the number of nodes and applications currently deployed on the cluster.
 +
 image::deploy/local_cluster_overview.png[link=self, window=blank, width=100%] 
 
-
-NOTE: For the purpose of this lab note that we are hosting the environment in Google Cloud. This is not a supported environment for production use at this time. For production use, please see the release notes available https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html-single/hosted_control_planes/index[here^]
+NOTE: For the purpose of this lab please note that we are hosting the environment in Google Cloud. This is not a supported environment for production use at this time. For production use, please see the release notes available https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html-single/hosted_control_planes/index[here^]
 +
 
 . Click on the *Add-ons* tab, in the list you will see the *hypershift-addon* listed. This is required for the deployment of Hosted Control Planes.
 +
 image::deploy/local_cluster_addons.png[link=self, window=blank, width=100%]
-
 
 . Now click on *Credentials* in the left-side menu. You should see that that there is a credential available called *kubevirt-secret*. This secret contains both a pull-secret, and a public ssh key from the bastion host that will allow you to deploy and manage the hosted cluster once it's deployed.
 +
@@ -58,11 +54,71 @@ image::deploy/view_credentials.png[link=self, window=blank, width=100%]
 +
 image::deploy/infrastructure_clusters.png[link=self, window=blank, width=100%]
 
+. One additional action we need to perform is to create a project for our hosted clusters to be deployed to. Click on the *All Clusters* menu item at the top and select *local-cluster* from the drop down menu.
++
+image::deploy/all_clusters_dropdown.png[link=self, window=blank, width=100%]
+
+. You will be presented with the *Overview* screen for the hosting cluster.
++
+image::deploy/hosting_cluster_overview.png[link=self, window=blank, width=100%]
+
+. On the left-side menu click on *Home* and then *Projects* and the blue *Create Project* button at the top of the screen.
++
+image::deploy/create_project_screen.png[link=self, window=blank, width=100%]
+
+. You will be presented with a *Create Project* window. Name your project *clusters* and click the blue *Create* button.
++
+image::deploy/create_project_screen.png[link=self, window=blank, width=100%]
+
+. With this complete we can return to our RHACM console by clicking on the *local-cluster* menu item at the top and selecting *All Clusters* from the drop-down menu.
++
+image::deploy/return_to_acm.png[link=self, window=blank, width=100%]
 
 [[deploy-cluster]]
 == Deploy Cluster
 
+. Click on the blue *Create cluster* button to begin the deployment process.
++
+image::deploy/create_cluster.png[link=self, window=blank, width=100%]
 
+. You will be presented with the *Infrastructure* window. Here you are given the choice of a number of cloud providers where you can deploy your OpenShift cluster, choose the tile for *Red Hat OpenShift Virtualization* and click on it.
++
+image::deploy/infrastructure_provider.png[link=self, window=blank, width=100%]
+
+. This will take you to a page titled *Control plane type - OpenShift Virtualization*. There is a tile here called *Hosted* which also mentioned the benefits of using Hosted Control Planes to deploy your OpenShift cluster. Click it.
++
+image::deploy/control_plane_type_hosted.png[link=self, window=blank, width=100%]
+
+. This will bring you to the *Create cluster* window where you will have a number of options to fill out for creating your new hosted cluster.
++
+. Please fill out the form with the following details:
+.. *Infrastructure provider credential:* kubevirt-secret
+.. *Cluster name:* my-hosted-cluster
+.. *Cluster set:* default
+.. *Release image:* 4.16.z
+.. *Etcd storage class:* ocs-storagecluster-ceph-rbd
++
+. Click on *Next* when you have completed filling out the options.
++
+image::deploy/create_cluster_details.png[link=self, window=blank, width=100%]
+
+. You will be presented with the page to configure your intitial cluster node pools. 
++
+. Please fill out the form with the following details:
+.. *Node pool name:* my-node-pool
+.. *Node pool replica:* 2
+.. *Core:* 2
+.. *Memory (GiB):* 8
+.. *Auto repair:* True
++
+. Click on *Next* when you have completed filling out the options.
++
+image::deploy/create_node_pools.png[link=self, window=blank, width=100%]
+
+. The next screen shown will allow you to review the deployment configuration by providing a review of the *Cluster details* and the *Node pools* that you have configured. If all looks good upon review, click the *Create* button to begin provisioning your hosted cluster.
++
+image::deploy/create_cluster_review.png[link=self, window=blanknode_pools
+ 
 
 
 [[explore-cluster]]
