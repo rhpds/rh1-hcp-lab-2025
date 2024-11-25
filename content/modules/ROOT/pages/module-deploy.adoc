@@ -22,41 +22,40 @@ Administrator login is available with:
 == Prerequisites for Deployment
 
 . Click on the link above to launch the OpenShift console in a new browser tab.
-
++
 image::deploy/console_login.png[link=self, window=blank, width=100%]
-+
-. When you login you will be presented with a pop-up window that promotes the ease of managing clusters with RHACM. Click the *x* in the corner to close the window.
 
-image::deploy/cluster_create_popup.png[link=self, window=blank, width=100%]
+. When you login you will be presented with a pop-up window that promotes the ease of managing clusters with RHACM. Click the *x* in the corner to close the window.
 +
+image::deploy/cluster_create_popup.png[link=self, window=blank, width=100%]
+
 
 . Your initial landing page will be on the ACM default view for All Clusters. Currently the only cluster being managed is the local cluster that we are running on.
 
 . Click on the *local-cluster* to find out more information about it.
-
-image::deploy/acm_default_window.png[link=self, window=blank, width=100%]
 +
+image::deploy/acm_default_window.png[link=self, window=blank, width=100%]
+
 
 . The *Overview* tab for the local cluster will show you the status of the environment, the console URL for direct login, as well the hosting environment, and the current release information, and information about the number of nodes and applications currently deployed on the cluster.
-
-image::deploy/local_cluster_overview.png[link=self, window=blank, width=100%] 
 +
+image::deploy/local_cluster_overview.png[link=self, window=blank, width=100%] 
+
 
 NOTE: For the purpose of this lab note that we are hosting the environment in Google Cloud. This is not a supported environment for production use at this time. For production use, please see the release notes available https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html-single/hosted_control_planes/index[here^]
 +
 
 . Click on the *Add-ons* tab, in the list you will see the *hypershift-addon* listed. This is required for the deployment of Hosted Control Planes.
-
-image::deploy/local_cluster_addons.png[link=self, window=blank, width=100%]
 +
+image::deploy/local_cluster_addons.png[link=self, window=blank, width=100%]
+
 
 . Now click on *Credentials* in the left-side menu. You should see that that there is a credential available called *kubevirt-secret*. This secret contains both a pull-secret, and a public ssh key from the bastion host that will allow you to deploy and manage the hosted cluster once it's deployed.
-
-image::deploy/view_credentials.png[link=self, window=blank, width=100%]
 +
+image::deploy/view_credentials.png[link=self, window=blank, width=100%]
 
 . When you are done viewing the credentials click on *Infrastructure* in the left-side menu and click on *Clusters* to return to the Clusters view where we began the next section. 
-
++
 image::deploy/infrastructure_clusters.png[link=self, window=blank, width=100%]
 
 
