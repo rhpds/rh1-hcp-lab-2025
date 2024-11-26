@@ -122,10 +122,10 @@ image::deploy/create_cluster_review.png[link=self, window=blank, width=100%]
 +
 image::deploy/hosted_cluster_deploying.png[link=self, window=blank, width=100%]
 
-After 15-20 minutes the cluster deployment will be complete and you can start to explore your hosted cluster.
+. After 15-20 minutes the cluster deployment will be complete and you can start to explore your hosted cluster.
 +
 image::deploy/hosted_cluster_deploy_complete.png[link=self, window=blank, width=100%]
-
++
 NOTE: Due to the fact that we are hosting this lab in Google Cloud, you will see two items without a green check once the hosted cluster deployment is complete. Neither itemwill have an adverse affect this lab going forward, but be sure to follow recommended configuration guides when deploying a cluster for production or your own testing use.
 
 [[explore-cluster]]
@@ -176,7 +176,7 @@ Once you are done exploring the pods running in the *clusters-my-hosted-cluster*
 === Cluster Details and Status
 
 The next major section of the overview page provides details about the cluster we deployed. This includes the status of the cluster, details about it's infrastructure and where we can manage future operations like upgrades. It also includes the information we need to access the cluster like the cluster API address, the console URL we can use to login, and the credentials to do so, conveniently hidden for security sake.
-+
+
 image::deploy/hosted_cluster_details.png[link=self, window=blank, width=100%]
  
 . Click the eye icon to review the credentials, it will provide the information for the *kubeadmin* user and a randomly generated password.
