@@ -14,7 +14,7 @@ NOTE: In this section we will make use of the Showroom terminal provided to the 
 
 === Gather Kubeconfig File to Interact with the Hosted Cluster
 
-. Using the Showroom terminal, SSH over to your bastion host at {bastion_public_hostname}.
+. Using the Showroom terminal, SSH over to your bastion host at *{bastion_public_hostname}*.
 +
 * *User:* {bastion_ssh_user_name}
 * *Password:* {bastion_ssh_password}
@@ -61,25 +61,7 @@ cat myuser.htpasswd
 +
 image::configure/cat_htpasswd.png[link=self, window=blank, width=100%]
 
-////
-. Now we need to create a secret that holds this value in our hosting cluster. Returning to our browser window make sure that you are in the *local cluster* and click on the *admin* menu in the top right, and select the option for *Copy login command*.
-+
-image::configure/copy_login_command.png[link=self, window=blank, width=100%]
-
-. A new tab will appear with a link for us to *Display Token*, click on this link to display the login command we need to authenticate in our terminal.
-+
-image::configure/display_token.png[link=self, window=blank, width=100%]
-
-. Copy the syntax from below the *Log in with this token* section.
-+
-image::configure/login_token.png[link=self, window=blank, width=100%]
-
-. Paste the syntax into your Showroom terminal and press the Enter key. You will be prompted to accept a security certificate, when you do you will be logged into the cluster via CLI.
-+
-image::configure/terminal_cluster_login.png[link=self, window=blank, width=100%]
-////
-
-. Now we can use this value to create a secret in the cluster we need to login with our own user account. Copy and paste the following syntax, and press the Enter key.
+. Now we can use this value to create a secret in the cluster, which we will need to be able to log in with our own user account. Copy and paste the following syntax, and press the Enter key.
 +
 [source,sh,role=execute,subs="attributes"]
 ----
