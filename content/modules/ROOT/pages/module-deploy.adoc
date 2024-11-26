@@ -126,7 +126,7 @@ image::deploy/hosted_cluster_deploying.png[link=self, window=blank, width=100%]
 +
 image::deploy/hosted_cluster_deploy_complete.png[link=self, window=blank, width=100%]
 +
-NOTE: Due to the fact that we are hosting this lab in Google Cloud, you will see two items without a green check once the hosted cluster deployment is complete. Neither itemwill have an adverse affect this lab going forward, but be sure to follow recommended configuration guides when deploying a cluster for production or your own testing use.
+NOTE: Due to the fact that we are hosting this lab in Google Cloud, you will see two items without a green check once the hosted cluster deployment is complete. Neither item will have an adverse affect this lab going forward, but be sure to follow recommended configuration guides when deploying a cluster for production or your own testing use.
 
 [[explore-cluster]]
 == Explore the Cluster
