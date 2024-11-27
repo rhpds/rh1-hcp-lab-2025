@@ -21,7 +21,7 @@ NOTE: In this section we will make use of the Showroom terminal provided to the 
 +
 image::configure/bastion_login.png[link=self, window=blank, width=100%]
 
-. We are going to use the *hcp* utility installed on the Bastion host to gather the Kubeconfig file from our hosted cluster so we can interact with it via CLI. Copy and paste the following syntax into your console and press Enter.
+. We are going to use the *hcp* utility installed on the bastion host to gather the Kubeconfig file from our hosted cluster so we can interact with it via CLI. Copy and paste the following syntax into your console and press Enter.
 +
 [source,sh,role=execute,subs="attributes"]
 ----
@@ -160,7 +160,7 @@ image::configure/blank_admin_view.png[link=self, window=blank, width=100%]
 +
 image::configure/cluster_log_out.png[link=self, window=blank, width=100%]
 
-. Return to the terminal where we are still logged into the Bastion host.
+. Return to the terminal where we are still logged into the bastion host.
 
 . Using the following syntax, use the *kubeconfig* file we created earlier to add your user to the cluster-admins group.
 +

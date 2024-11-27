@@ -72,7 +72,7 @@ image::scale/apache_test_page.png[link=self, window=blank, width=100%]
 +
 image::scale/cluster_node_pools.png[link=self, window=blank, width=100%]
 
-. Return to the terminal at the right of your showroom and ssh to the Bastion host once again.
+. Return to the terminal at the right of your showroom and ssh to the bastion host once again.
 +
 image::scale/ssh_bastion.png[link=self, window=blank, width=100%]
 
