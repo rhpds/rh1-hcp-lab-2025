@@ -217,7 +217,7 @@ image::deploy/hosted_cluster_applications.png[link=self, window=blank, width=100
 +
 image::deploy/cluster_overview_nodes_tab.png[link=self, window=blank, width=100%]
 
-. You will be taken to a page that shows the nodes in your nodepool, and some basic information about their resources. if you recall we configured two during the deployment. Click on the first cluster node to explore it further.
+. You will be taken to a page that shows the nodes in your node pool, and some basic information about their resources. if you recall we configured two during the deployment. Click on the first cluster node to explore it further.
 +
 image::deploy/cluster_overview_nodes_tab.png[link=self, window=blank, width=100%]
 
@@ -229,12 +229,12 @@ image::deploy/hosted_cluster_node_details.png[link=self, window=blank, width=100
 +
 image::deploy/manage_cluster_nodepools.png[link=self, window=blank, width=100%]
 
-. You will be prompted with a pop-up window to *Manage node pool* where you can manually scale the nodepool to more than 2 nodes. Close this window when you are done viewing it.
+. You will be prompted with a pop-up window to *Manage node pool* where you can manually scale the node pool to more than 2 nodes. Close this window when you are done viewing it.
 +
 image::deploy/scale_up_nodepool.png[link=self, window=blank, width=100%]
 
-IMPORTANT: Do not scale the cluster at this time! We will work with nodepools later in the lab.
+IMPORTANT: Do not scale the cluster at this time! We will work with node pools later in the lab.
 
 == Summary
 
-In this module of our lab we have deployed a hosted OpenShift cluster on OpenShift by using Hosted Control Planes. We explored the pods that make up the control plane, and the virtual machines that make up the worker nodepool.
+In this module of our lab we have deployed a hosted OpenShift cluster on OpenShift by using Hosted Control Planes. We explored the pods that make up the control plane, and the virtual machines that make up the worker node pool.

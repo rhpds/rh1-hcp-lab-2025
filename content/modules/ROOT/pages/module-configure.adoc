@@ -30,7 +30,7 @@ hcp create kubeconfig --name my-hosted-cluster >> my-hosted-cluster.kube
 +
 image::configure/create_kubeconfig.png[link=self, window=blank, width=100%]
 
-. Use the newly created kubeconfig to check the number of nodes in the hosted cluster nodepool to confirm it's working as expected.
+. Use the newly created kubeconfig to check the number of nodes in the hosted cluster node pool to confirm it's working as expected.
 +
 [source,sh,role=execute,subs="attributes"]
 ----

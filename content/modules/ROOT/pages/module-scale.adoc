@@ -1,6 +1,6 @@
 = Scaling the Cluster
 
-One of the major benefits of OpenShift on OpenShift with Hosted Control Planes is how easy it is for the cluster nodepools to scale dynamically. As resources are consumed in the hosted cluster, the hosting cluster monitor's it's performance and will autoscale the cluster to meet the requested needs. In this section we will demonstrate this feature.
+One of the major benefits of OpenShift on OpenShift with Hosted Control Planes is how easy it is for the cluster node pools to scale dynamically. As resources are consumed in the hosted cluster, the hosting cluster monitor's it's performance and will autoscale the cluster to meet the requested needs. In this section we will demonstrate this feature.
 
 . Goals
 * Deploy an application to the cluster.
@@ -96,7 +96,7 @@ image::scale/scale_application.png[link=self, window=blank, width=100%]
 +
 image::scale/out_of_resources.png[link=self, window=blank, width=100%]
 
-. Return to the tab that shows the information for the hosting cluster, and we should see the size of the nodepool dynamically update.
+. Return to the tab that shows the information for the hosting cluster, and we should see the size of the node pool dynamically update.
 +
 image::scale/node_pool_update.png[link=self, window=blank, width=100%] 
 
@@ -108,7 +108,7 @@ image::scale/new_vm.png[link=self, window=blank, width=100%]
 +
 image::scale/nodepool_autoscale_ready.png[link=self, window=blank, width=100%]
 
-. Click on the *Nodes* tab at the top to see the *Three* nodes that make up our nodepool now.
+. Click on the *Nodes* tab at the top to see the *Three* nodes that make up our node pool now.
 +
 image::scale/nodes_menu.png[link=self, window=blank, width=100%]
 
