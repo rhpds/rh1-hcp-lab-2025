@@ -1,21 +1,44 @@
-= Introducing OpenShift on OpenShift
+= Introducing OpenShift on OpenShift with Hosted Control Planes
 
-
-
-
-
-
+This lab seeks to familiarize it's audience with benefits of Red Hat OpenShift on OpenShift as a virtual hosted cluster by using Hosted Control Planes (HCP). Hosted Control Planes (formerly the HyperShift project) are a fairly new addition to self-managed OpenShift workloads, made generally available with the 4.14 release, which allow for a central management cluster to host additional managed sub-clusters in bare metal or virtualized form. This greatly increases the efficiency of an OpenShift deployment, saving on physical resource costs, cluster management overhead, and the total time to deploy, doing so is quite expedited. In addition this lab will explore the advantages of using a centralized management solution for the hosted clustersm which is provided by Advanced Cluster Management for Kubernetes (RHACM). 
 
 
 [[value-prop]]
 == Value Prop
 
+*Distributed Clusters for Disaster Recovery:* A single hosted control plane instance deployed to a management or hub cluster could have a number of node pools assigned to the cluster from remote managed locations in disparate data centers, helping to protect against the loss of a cluster in the event of an unplanned disaster or data center outage. Should the worker nodes in one data center become unavailable, the application pods that are non-responsive could be relaunched on additional worker nodes in the cluster that reside in a different location. 
 
+*Ease of Cluster Administration:* Service providers or groups acting in such a manner can provision entirely new cluster environments rapidly, without additional overhead. New clusters can be made available to end users in a matter of minutes, and taken down once they are no longer needed. Developers may even be able to request the provisioning of clusters on demand for testing of a specific application in an isolated environment. The physical separation of control planes and worker nodes also allows cluster administrators to update control planes individually or even without updating the worker nodes for a cluster in tandem.
 
+*Reduction of Physical Resources:* A traditional OpenShift deployment requires a minimum of 3 control plane hosts and 2 data plane hosts in order to be deployed as a highly available and fault-tolerant platform. In an environment where a number of separate clusters are being deployed, it would be more cost-effective to be able to deploy only worker nodes for each new cluster instance and to have the control plane for each not be localized but hosted in a centralized data center.
+
+*Secure Multi-Tenancy:* In OpenShift, workloads and their responsibilities are often segregated through projects and access to these projects is governed by user accounts and permissions. While this virtual separation of applications exists, they still share the same level of access to all physical system resources as any other application and or project. The use of hosted control planes to dedicate entirely managed OpenShift clusters, either virtual or physical to projects or end users, offers a cluster the ability to safely separate workloads completely and allows for a truer form of multi-tenancy than traditionally available in OpenShift. 
+
+*Secure Network Segregation:* Due to the natural decoupling of the infrastructure, hosted control planes allow for the control planes themselves to be a part of the network domain of the management cluster, while the worker nodes reside on a different physical network and are able to be a part of that network domain. This arrangement ensures that management traffic is separated from data plane traffic, and that applications deployed do not have access to the control plane through physical separation.
 
 
 [[arc-con]]
 == Architectural Concepts
+
+A hosted control planes cluster can be deployed to either bare metal nodes or virtual nodes provisioned with OpenShift Virtualization. In this lab we will be focused on deployments of virtual OpenShift clusters provided by OpenShift Virtualization.
+
+A hosted control planes cluster saves on physical resources by reducing the number of nodes that need to be deployed to support the cluster. Instead of dedicated control plane nodes for each cluster deployment, only worker nodes are provisioned, as the cluster support services are run in pods in a dedicated namespace for the cluster.
+
+The following graphic compares a Hosted Control Planes cluster to a traditional OpenShift cluster:
+
+image::intro/hosted_control_planes[link=self, window=blank, width=100%]
+
+As stated previously, with virtual clusters provided by OpenShift Virtualization, administration teams can use a single centralized cluster with physical nodes to deploy a large number of individual clusters for multi-tenant workloads.
+
+This is an example architecture showing a single hosting cluster, and multiple virtual clusters:
+
+image::intro/hcp_v[link=self, window=blank, width=100%]
+
+Such fleet management is greatly eased by the deployment of https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.12/html/about/index[Red Hat Advanced Cluster Managment for Kubernetes (RHACM)^] as a part of the solution.
+
+The following graphic shows how a managed cluster depends on the hub cluster for a number of advanced features:
+
+image::intro/acm_overview[link=self, window=blank, width=100%]
 
 
 [[lab-info]]
