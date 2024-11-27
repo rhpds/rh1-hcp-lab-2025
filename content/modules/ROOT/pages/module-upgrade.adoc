@@ -2,6 +2,12 @@
 
 Another reason to deploy Red Hat Cluster Management for Kuberentes (RHACM) for the deployment and management of hosted clusters is for fleet management. The upgrade process for a hosted control planes cluster is a little different from that of standalone clusters. In this module we will explore the upgrade process, and then apply an upgrade to our cluster.
 
+*Goals*
+
+* Review upgrade processes for a hosted control planes cluster.
+* Perform an upgrade to the cluster.
+
+
 IMPORTANT: This lab was created in the late fall prior to the release of OpenShift 4.18. While the images in the lab guide may not match exactly the lab environment in front of you, the lab tasks remain and function the same.
 
 [[review-upgrade]]

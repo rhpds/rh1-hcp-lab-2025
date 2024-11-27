@@ -2,7 +2,8 @@
 
 One of the major benefits of OpenShift on OpenShift with Hosted Control Planes is how easy it is for the cluster node pools to scale dynamically. As resources are consumed in the hosted cluster, the hosting cluster monitor's it's performance and will autoscale the cluster to meet the requested needs. In this section we will demonstrate this feature.
 
-. Goals
+*Goals*
+
 * Deploy an application to the cluster.
 * Scale up the application so that it consumes additional resources.
 * Observe the cluster autoscale feature.

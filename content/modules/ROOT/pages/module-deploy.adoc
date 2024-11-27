@@ -4,7 +4,7 @@
 
 The beginning section of this lab will introduce you to the basics of using Advanced Cluster Management for Kubernetes (RHACM) and the Multicluster Engine operator to deploy an OpenShift on OpenShift cluster using Hosted Control Planes as the provider.
 
-. *Goals*
+*Goals*
 
 * Deploy a hosted control planes based OpenShift cluster.
 * Review the hosted cluster environment.
@@ -164,7 +164,7 @@ image::deploy/etcd0_details.png[link=self, window=blank, width=100%]
 +
 image::deploy/nodepool_pods.png[link=self, window=blank, width=100%]
 
-. These are the *VirtualMachineInstance* pods that represent the two virtual worker nodes in our NodePool. Notice that the amount of reserved memory is much larger than any other pod in this project.
+. These are the *VirtualMachineInstance* pods that represent the two virtual worker nodes in our node pool. Notice that the amount of reserved memory is much larger than any other pod in this project.
 
 . Click on one of the pods to bring up it's detail page. Notice that like etcd you can also see the node that it is assigned to, as well as it's pod disruption budget. But also a node slector to find nodes that can host VMs, as well as a difference in the restart policy.
 +
@@ -211,7 +211,7 @@ image::deploy/hosted_cluster_applications.png[link=self, window=blank, width=100
 
 . When you are done exploring this page, click the back button on your browser to return to the *my-hosted-cluster* overview.
 
-=== Nodes and NodePools
+=== Nodes and Node Pools
 
 . From the *my-hosted-cluster* overview page, click on the tab for nodes at the top.
 +
@@ -233,7 +233,7 @@ image::deploy/manage_cluster_nodepools.png[link=self, window=blank, width=100%]
 +
 image::deploy/scale_up_nodepool.png[link=self, window=blank, width=100%]
 
-IMPORTANT: Do not scale the cluster at this time! We will work with node pools later in the lab.
+IMPORTANT: *Do not scale the cluster at this time! We will work with node pools later in the lab.*
 
 == Summary
 

@@ -2,7 +2,7 @@
 
 One of the primary use cases for a hosted control planes deployment is to provide multitenancy for individual users so that they can have their own clusters with dedicated resources that cannot be infringed upon by other users. Unlike a standard deployment of OpenShift, the configuration for authentication and authorization will need to be performed on the hosting cluster against the HostedCluster object. In this lab we will step through the process of adding an additional user account for us to login with, grant that user the cluster admin role, and then test that login functionality. 
 
-. *Goals*
+*Goals*
 
 * Configure authentication for a regular user.
 * Test the authentication once the cluster is configured.
