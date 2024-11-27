@@ -26,19 +26,19 @@ A hosted control planes cluster saves on physical resources by reducing the numb
 
 The following graphic compares a Hosted Control Planes cluster to a traditional OpenShift cluster:
 
-image::intro/hosted_control_planes[link=self, window=blank, width=100%]
+image::intro/hosted_control_planes.png[link=self, window=blank, width=100%]
 
 As stated previously, with virtual clusters provided by OpenShift Virtualization, administration teams can use a single centralized cluster with physical nodes to deploy a large number of individual clusters for multi-tenant workloads.
 
 This is an example architecture showing a single hosting cluster, and multiple virtual clusters:
 
-image::intro/hcp_v[link=self, window=blank, width=100%]
+image::intro/hcp_v.png[link=self, window=blank, width=100%]
 
 Such fleet management is greatly eased by the deployment of https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.12/html/about/index[Red Hat Advanced Cluster Management for Kubernetes (RHACM)^] as a part of the solution.
 
 The following graphic shows how a managed cluster depends on the hub cluster for a number of advanced features:
 
-image::intro/acm_overview[link=self, window=blank, width=100%]
+image::intro/acm_overview.png[link=self, window=blank, width=100%]
 
 [[lab-summary]]
 == Lab Summary
