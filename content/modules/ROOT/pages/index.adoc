@@ -1,10 +1,45 @@
 = Introducing OpenShift on OpenShift with Hosted Control Planes
 
-This lab seeks to familiarize it's audience with benefits of Red Hat OpenShift on OpenShift as a virtual hosted cluster by using Hosted Control Planes (HCP). Hosted Control Planes (formerly the HyperShift project) are a fairly new addition to self-managed OpenShift workloads, made generally available with the 4.14 release, which allow for a central management cluster to host additional managed sub-clusters in bare metal or virtualized form. This greatly increases the efficiency of an OpenShift deployment, saving on physical resource costs, cluster management overhead, and the total time to deploy, doing so is quite expedited. In addition this lab will explore the advantages of using a centralized management solution for the hosted clustersm which is provided by Advanced Cluster Management for Kubernetes (RHACM). 
+The goal of this lab is to familiarize the attendees with the benefits and features of hosted virtual Red Hat OpenShift clusters deployed to bare metal OpenShift using hosted control planes (HCP). Hosted control planes (a downstream of the hypershift project) were made generally available, and fully supported, with OpenShift 4.14. This capability allows for a central management cluster to host multiple managed clusters in bare metal or virtualized form. This greatly increases the efficiency of an OpenShift deployment, saving on physical resource costs, cluster management overhead, and the total time to deploy, doing so is quite expedited. In addition this lab will explore the advantages of using a centralized management solution for the hosted clustersm which is provided by Advanced Cluster Management for Kubernetes (RHACM). 
+
+[[terminology]]
+== Terminology
+
+* *Hosted cluster*
++
+An OpenShift Container Platform cluster with its control plane and API endpoint hosted on a management cluster. The hosted cluster includes the control plane and its corresponding data plane.
+
+* *Hosted cluster infrastructure*
++
+Network, compute, and storage resources that exist in the tenant or end-user cloud account.
+
+* *Hosted control plane*
++
+An OpenShift Container Platform control plane that runs on the management cluster, which is exposed by the API endpoint of a hosted cluster. The components of a control plane include etcd, the Kubernetes API server, the Kubernetes controller manager, and a VPN.
+
+* *Managed cluster*
++
+A cluster that the hub cluster manages. This term is specific to the cluster lifecycle that the multicluster engine for Kubernetes Operator manages in Red Hat Advanced Cluster Management. A managed cluster is not the same thing as a management cluster. For more information, see Managed cluster.
+
+* *Management, or hosting, cluster*
++
+An OpenShift Container Platform cluster where the HyperShift Operator is deployed and where the control planes for hosted clusters are hosted. The management cluster is synonymous with the hosting cluster.
+
+* *Management cluster infrastructure*
++
+Network, compute, and storage resources of the management cluster.
+
+* *Node pool*
++
+A resource that contains the compute nodes. The control plane contains node pools. The compute nodes run applications and workloads.
 
 
 [[value-prop]]
-== Value Prop
+== Why use hosted control planes?
+
+With the introduction of OpenShift Virtualization Engine (OVE), Red Hat now provides an OpenShift experience that is tailored for, and targeted at, virtualization-only administrators. For customers who are using virtual OpenShift deployed to other hypervisor platforms, they can move to OVE without needing to change the way their hosted clusters are subscribed.
+
+Furthermore, with updates to the bare metal OpenShift Kuberntes Engine (OKE), OpenShift Container Platform (OCP), and OpenShift Platform Plus (OPP) offerings, virtual OpenShift clusters deployed to these bare metal clusters inherit subscriptions of the same product type from the bare metal cluster. For cusotmers with substantial virtual OpenShift deployments, this offers a cost efftive way to move their OpenShift footprint away from existing hypervisors while also simplifying the management paradigm and improving resource efficiency.
 
 *Distributed Clusters for Disaster Recovery:* A single hosted control plane instance deployed to a management or hub cluster could have a number of node pools assigned to the cluster from remote managed locations in disparate data centers, helping to protect against the loss of a cluster in the event of an unplanned disaster or data center outage. Should the worker nodes in one data center become unavailable, the application pods that are non-responsive could be relaunched on additional worker nodes in the cluster that reside in a different location. 
 
@@ -22,9 +57,9 @@ This lab seeks to familiarize it's audience with benefits of Red Hat OpenShift o
 
 A hosted control planes cluster can be deployed to either bare metal nodes or virtual nodes provisioned with OpenShift Virtualization. In this lab we will be focused on deployments of virtual OpenShift clusters provided by OpenShift Virtualization.
 
-A hosted control planes cluster saves on physical resources by reducing the number of nodes that need to be deployed to support the cluster. Instead of dedicated control plane nodes for each cluster deployment, only worker nodes are provisioned, as the cluster support services are run in pods in a dedicated namespace for the cluster.
+A hosted control planes cluster saves on physical resources by reducing the number of nodes that need to be deployed to support the cluster. The hosted cluster control plane services are run in Pods, in a dedicated namespace, on the hosting cluster. This results in only worker nodes being provisioned for the hosted cluster.
 
-The following graphic compares a Hosted Control Planes cluster to a traditional OpenShift cluster:
+The following graphic compares a hosted control planes cluster to a traditional OpenShift cluster:
 
 image::intro/hosted_control_planes.png[link=self, window=blank, width=100%]
 
@@ -49,9 +84,9 @@ These are the four main sections that will be covered in the lab:
 
 *Configuration:* Performing operations on the *hosting* cluster to enact configuration changes on the *hosted* cluster.
 
-*Scaling:* NodePools in a Hosted Control Planes environment can be configured to autoscale when resources are unavaialable to meet application requests. We will deploy an application and scale it up, requiring the cluster to scale up dynamically to meet application needs.
+*Scaling:* NodePools in a hosted control planes environment, like MachineSets in standard clusters, can be configured to autoscale when resources are unavaialable to meet application requests. In this module we will deploy an application and scale it up, requiring the cluster to scale up dynamically to meet application needs.
 
-*Cluster Upgrades:* A demonstration of centralized fleet management by exploring cluster upgrade processes, and a walkthrough of the cluster upgrade process using Red Hat Advanced Cluster Management for Kubernetes.
+*Cluster Upgrades:* This module is an exploration of centralized fleet management by experiencing the cluster upgrade processes, and a walkthrough of the cluster upgrade process using Red Hat Advanced Cluster Management for Kubernetes.
 
 
 [[lab-info]]

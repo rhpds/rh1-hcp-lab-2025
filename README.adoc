@@ -1,35 +1,30 @@
 == Introduction
 
-This repository hosts the lab guide for the OpenShift on OpenShift with Hosted Control Planes lab, which will be delivered by Red Hat Associates at the Red Hat One event in Spring 2025.
+This repository hosts the lab guide for the OpenShift on OpenShift with Hosted Control Planes lab (LAB01), which will be delivered by Red Hat Associates at the Red Hat One event in Spring 2025.
 
 It is designed to work with the Showroom lab environment provided by the Red Hat Demo Platform (RHDP) team.
 
-This lab is organized to allow you to have a hands-on experience with Red Hat Advanced Cluster Management for Kubernetes (RHACM) and to use it to deploy virtual OpenShift on OpenShift clusters with Hosted Control Planes.
+This lab is organized to allow you to have a hands-on experience with Red Hat Advanced Cluster Management for Kubernetes (RHACM) and to use it to deploy virtual OpenShift on OpenShift clusters with Hosted Control Planes (HCP).
 
 
 == Lab Content
 
 These are the four main sections that will be covered:
 
-*Deployment:* Using Red Hat Advanced Cluster Management for Kubernetes (RHACM) to deploy a virtual OpenShift on OpenShift cluster using Red Hat OpenShift Virtualization. This section also explores the environment once it's deployed.
+*Deployment:* Using Red Hat Advanced Cluster Management for Kubernetes (RHACM) to deploy a virtual OpenShift-on-OpenShift cluster using Red Hat OpenShift Virtualization. This section also explores the environment once it's deployed.
 
 *Configuration:* Performing operations on the *hosting* cluster to enact configuration changes on the *hosted* cluster. 
 
-*Scaling:* NodePools in a Hosted Control Planes environment can be configured to autoscale when resources are unavaialable to meet application requests. We will deploy an application and scale it up, requiring the cluster to scale up dynamically to meet application needs.
+*Scaling:* NodePools, used to provide virtual compute nodes for the hosted clusters, can be configured to autoscale when resources are unavaialable to meet application requests. We will deploy an application and scale it up, requiring the hosted cluster to scale up dynamically to meet application needs.
 
 *Cluster Upgrades:* A demonstration of centralized fleet management by exploring cluster upgrade processes, and a walkthrough of the cluster upgrade process using Red Hat Advanced Cluster Management for Kubernetes.
 
-
 == Version Information
 
-This edition of the lab has been developed using the following software versions:
+The current edition of the lab has been developed using the following software versions:
 
-Red Hat Advanced Cluster Management for Kubernetes 2.12
-
-Red Hat OpenShift 4.17.4
-
-Red Hat OpenShift Virtualization 4.17.1
-
-Red Hat OpenShift Data Foundation 4.16.3
-
-Multicluster Engine for Kubernetes 2.7.1
+* Red Hat Advanced Cluster Management for Kubernetes 2.12
+* Red Hat OpenShift 4.17.4
+* Red Hat OpenShift Virtualization 4.17.1
+* Red Hat OpenShift Data Foundation 4.16.3
+* Multicluster Engine for Kubernetes 2.7.1

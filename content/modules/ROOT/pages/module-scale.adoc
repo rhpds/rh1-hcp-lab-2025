@@ -1,6 +1,6 @@
 = Scaling the Cluster
 
-One of the major benefits of OpenShift on OpenShift with Hosted Control Planes is how easy it is for the cluster node pools to scale dynamically. As resources are consumed in the hosted cluster, the hosting cluster monitor's it's performance and will autoscale the cluster to meet the requested needs. In this section we will demonstrate this feature.
+One of the major benefits of OpenShift on OpenShift with hosted control planes is how easy it is for the cluster node pools to scale dynamically. As resources are consumed in the hosted cluster, the hosting cluster responds to  autoscale requests from the cluster to meet the application needs. In this section we will demonstrate this feature.
 
 *Goals*
 
@@ -11,7 +11,7 @@ One of the major benefits of OpenShift on OpenShift with Hosted Control Planes i
 
 
 [[deploy-app]]
-== Deploy an Application to your Hosted Cluster
+== Deploy an Application to your hosted cluster
 
 . Starting where we left off on the Admin Console of our *my-hosted-cluster* deployment, click on *Administrator* on the left-side menu, and select *Developer* from the drop-down menu.
 +
@@ -66,7 +66,7 @@ image::scale/apache_test_page.png[link=self, window=blank, width=100%]
 [[explore-autoscale]]
 == Explore Autoscaling
 
-. Now that our application is deployed and running we are going to see autoscaling live in action, but first we have to enable it if it isn't already. 
+Now that our application is deployed and running we are going to see autoscaling live in action, but first we have to enable it if it isn't already. 
 
 . Click on the tab that takes us back to our hosting cluster and back up to the *Cluster node pools* section. We can see that there are still just 2 nodes in *my-node-pool*, but we can also see that *Autoscaling* is set to *Faluse*
 +
@@ -121,7 +121,7 @@ image::scale/all_app_replicas.png[link=self, window=blank, width=100%]
 [[clean-up]]
 == Delete the Application and Scale Down the Cluster
 
-. Once we are done with the need for extra resources we will need to scale down our cluster. Eventually it will dynamically scale down after some time, but if we don't want to wait for this process, we may need to perform the action manually.
+Once we are done with the need for extra resources we will need to scale down our cluster. Eventually it will dynamically scale down after some time, but if we don't want to wait for this process, we may need to perform the action manually.
 
 . First lets clean up our application and free up those resources.
 
@@ -147,7 +147,10 @@ image::scale/nodes_menu.png[link=self, window=blank, width=100%]
 +
 image::scale/nodes_menu_2.png[link=self, window=blank, width=100%]
 
-NOTE: If you do not have the time to wait for the cluster to autoscale it is perfectly acceptable to manually scale it back to 2 nodes. Follow these next steps to perform that action if necessary.
+[NOTE]
+.Manually scaling the NodePool
+====
+If you do not have the time to wait for the cluster to autoscale it is perfectly acceptable to manually scale it back to 2 nodes. Follow these next steps to perform that action if necessary.
 
 . Click on the three-dot menu to the right side of the *Cluster node pools* section, and when the drop down menu appears click on *Manage node pool.*
 +
@@ -156,7 +159,7 @@ image::scale/manage_node_pool.png[link=self, window=blank, width=100%]
 . On the menu that appears, set the number of nodes to 2, and then click the blue *Update* button.
 +
 image::scale/two_nodes.png[link=self, window=blank, width=100%]
-
+====
 
 == Summary
 
