@@ -1,6 +1,6 @@
 = Configure the Hosted Cluster
 
-One of the primary use cases for a hosted control planes deployment is to provide multitenancy for individual users so that they can have their own clusters with dedicated resources that cannot be infringed upon by other users. Unlike a standard deployment of OpenShift, the configuration for authentication and authorization will need to be performed on the hosting cluster against the HostedCluster object. In this lab we will step through the process of adding an additional user account for us to login with, grant that user the cluster admin role, and then test that login functionality. 
+One of the primary use cases for a hosted control planes deployment is to provide multitenancy for organizations so that individuals and teams can have their own clusters with dedicated resources that cannot be infringed upon by other users. Unlike a standard deployment of OpenShift, the configuration for authentication and authorization will need to be performed on the hosting cluster against the `HostedCluster` object. In this lab we will step through the process of adding an additional user account for us to login with, grant that user the cluster admin role, and then test that login functionality. 
 
 *Goals*
 
@@ -12,7 +12,7 @@ NOTE: In this section we will make use of the Showroom terminal provided to the 
 [[local-auth]]
 == Configure Authentication
 
-=== Gather Kubeconfig File to Interact with the Hosted Cluster
+=== Gather the Kubeconfig file to interact with the hosted cluster
 
 . Using the Showroom terminal, SSH over to your bastion host at *{bastion_public_hostname}*.
 +
@@ -21,7 +21,7 @@ NOTE: In this section we will make use of the Showroom terminal provided to the 
 +
 image::configure/bastion_login.png[link=self, window=blank, width=100%]
 
-. We are going to use the *hcp* utility installed on the bastion host to gather the Kubeconfig file from our hosted cluster so we can interact with it via CLI. Copy and paste the following syntax into your console and press Enter.
+. We are going to use the *hcp* CLI, already installed on the bastion host, to gather the Kubeconfig file from our hosted cluster so we can interact with it via CLI. Copy and paste the following syntax into your console and press Enter.
 +
 [source,sh,role=execute,subs="attributes"]
 ----
@@ -52,7 +52,7 @@ htpasswd -c -B -b myuser.htpasswd myuser R3dH4t1!
 +
 image::configure/terminal_create_htpasswd.png[link=self, window=blank, width=100%]
 
-. We can use the *cat* command to list the contents of the newly created htpasswd file. Use the syntax below to view the file's contents. It will include our username, and the hashed value of the password we created.
+. Use the `cat` command to list the contents of the newly created htpasswd file. Use the syntax below to view the file's contents. It will include our username, and the hashed value of the password we created.
 +
 [source,sh,role=execute,subs="attributes"]
 ----
@@ -70,7 +70,7 @@ oc create secret generic htpasswd-mysecret --from-file=htpasswd=myuser.htpasswd 
 +
 image::configure/secret_created.png[link=self, window=blank, width=100%]
 
-. With the secret created we can now return to our hosting cluster's OpenShift console and perform some tasks from there. 
+. With the secret created we can now return to our hosting cluster's OpenShift console and to perform the next steps. 
 
 === Add User to Cluster
 

@@ -2,11 +2,11 @@
 
 == Introduction
 
-The beginning section of this lab will introduce you to the basics of using Advanced Cluster Management for Kubernetes (RHACM) and the Multicluster Engine operator to deploy an OpenShift on OpenShift cluster using Hosted Control Planes as the provider.
+The beginning section of this lab will introduce you to the basics of using Advanced Cluster Management for Kubernetes (RHACM) and the Multicluster Engine operator to deploy an OpenShift on OpenShift Virtualization cluster using Hosted Control Planes as the provider.
 
 *Goals*
 
-* Deploy a hosted control planes based OpenShift cluster.
+* Deploy a new OpenShift cluster using a hosted control plane.
 * Review the hosted cluster environment.
 
 As a reminder, here are your credentials for the OpenShift Console:
@@ -95,7 +95,7 @@ image::deploy/control_plane_type_hosted.png[link=self, window=blank, width=100%]
 .. *Cluster name:* my-hosted-cluster
 .. *Cluster set:* default
 .. *Release image:* 4.16.z
-.. *Etcd storage class:* ocs-storagecluster-ceph-rbd
+.. *etcd storage class:* ocs-storagecluster-ceph-rbd
 +
 . Click on *Next* when you have completed filling out the options.
 +
