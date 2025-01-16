@@ -11,7 +11,7 @@ One of the major benefits of OpenShift on OpenShift with hosted control planes i
 
 
 [[deploy-app]]
-== Deploy an Application to your hosted cluster
+== Deploy an Application to your Hosted Cluster
 
 . Starting where we left off on the Admin Console of our *my-hosted-cluster* deployment, click on *Administrator* on the left-side menu, and select *Developer* from the drop-down menu.
 +

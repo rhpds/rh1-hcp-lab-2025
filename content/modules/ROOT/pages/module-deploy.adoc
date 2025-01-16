@@ -95,7 +95,7 @@ image::deploy/control_plane_type_hosted.png[link=self, window=blank, width=100%]
 .. *Cluster name:* my-hosted-cluster
 .. *Cluster set:* default
 .. *Release image:* 4.16.z
-.. *etcd storage class:* ocs-storagecluster-ceph-rbd
+.. *Etcd storage class:* ocs-storagecluster-ceph-rbd
 +
 . Click on *Next* when you have completed filling out the options.
 +
