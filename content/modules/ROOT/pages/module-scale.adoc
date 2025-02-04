@@ -150,7 +150,9 @@ image::scale/nodes_menu_2.png[link=self, window=blank, width=100%]
 [NOTE]
 .Manually scaling the NodePool
 ====
-When autoscaling is enabled you lose the ability to scale worker nodes manually. However, if your cluster had not configured autoscaling, then it is perfectly acceptable to manually scale it up to 3 and back down to 2 nodes to provide the resources you need. Follow these next steps to perform that action if necessary.
+When autoscaling is enabled you will lose the ability to scale worker nodes manually. 
+
+However, if your cluster had not been configured autoscaling, then it is perfectly acceptable to manually scale it up to 3 and back down to 2 nodes to provide the resources you need. Follow these next steps to perform that action if necessary.
 
 . Click on the three-dot menu to the right side of the *Cluster node pools* section, and when the drop down menu appears click on *Manage node pool.*
 +
