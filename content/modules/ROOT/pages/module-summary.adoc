@@ -4,7 +4,7 @@ In completing this lab you will have performed the following tasks:
 
 *Hosted Cluster Deployment:* 
 
-* We reviewed the prerequisites required to deploy an OpenShift on OpenShift cluster with Hosted Control Planes.
+* We reviewed the prerequisites required to deploy an OpenShift on OpenShift cluster with hosted control planes.
 * We made use of Red Hat Advanced Cluster Management for Kubernetes to deploy our OpenShift on OpenShfit cluster.
 * We explored our deployed cluster, including the control plane pods and node pools that it is composed of.
 
