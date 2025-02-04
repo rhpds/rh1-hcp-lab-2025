@@ -165,4 +165,4 @@ image::scale/two_nodes.png[link=self, window=blank, width=100%]
 
 == Summary
 
-In this section we learned about one of the major benefits of Hosted Control Planes and NodePools which is the ability to autoscale up and down on demand when an application requests more resources than are currently available in the cluster, or when an application is deleted and frees up those resources.
+In this section we learned about one of the major benefits of hosted control planes and NodePools which is the ability to autoscale up and down on demand when an application requests more resources than are currently available in the cluster, or when an application is deleted and frees up those resources.
