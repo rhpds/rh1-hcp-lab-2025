@@ -7,9 +7,6 @@ Another reason to deploy Red Hat Cluster Management for Kubernetes (RHACM) for t
 * Review upgrade processes for a hosted control planes cluster.
 * Perform an upgrade to the cluster.
 
-
-IMPORTANT: This lab was created prior to the release of OpenShift 4.18. While the images in the lab guide may not match exactly the lab environment in front of you, the lab tasks remain and function the same.
-
 [[review-upgrade]]
 == Review the Upgrade Process
 
@@ -21,7 +18,7 @@ image::upgrade/cluster_details.png[link=self, window=blank, width=100%]
 +
 image::upgrade/hosted_cluster_login.png[link=self, window=blank, width=100%]
 
-. You will be presented with the Administrator Overview, but there is something different from a standard cluster. In the *Details* panel take notice of the *Update Channel*.
+. You will be presented with the Administrator overview, but there is something different from a standard cluster. In the *Details* panel take notice of the *Update Channel*.
 +
 image::upgrade/admin_overview.png[link=self, window=blank, width=100%]
 
@@ -29,7 +26,7 @@ image::upgrade/admin_overview.png[link=self, window=blank, width=100%]
 +
 image::upgrade/left_menu_cluster_settings.png[link=self, window=blank, width=100%]
 
-. On the *Cluster Settings* page we see that the *Update status* confirms that no channel is configured, we and that we are not able to set the channel, because the control plane is hosted.
+. On the *Cluster Settings* page we see that the *Update status* confirms that no channel is configured, and that we are not able to set the channel, because the control plane is hosted.
 +
 image::upgrade/update_channel.png[link=self, window=blank, width=100%]
 
@@ -55,13 +52,13 @@ image::upgrade/multi_cluster_upgrade.png[link=self, window=blank, width=100%]
 [[apply-upgrade]]
 == Apply the Cluster Upgrade
 
-. Now that we have explored how to being our cluster upgrade process from our hosted cluster environment, lets kick off an upgrade process.
+. Now that we have explored the many methods that are available of how to begin our hosted cluster upgrade process, lets get started by performing one.
 
-. Starting from the *Cluster list* lets click on the link for *Upgrade available* for our hosted cluster.
+. Starting from the *Cluster list* let us click on the link for *Upgrade available* for our hosted cluster.
 +
 image::upgrade/upgrade_available.png[link=self, window=blank, width=100%]
 
-. A new window appears with a drop-down menu allowing you to select from a number of acceptable release versions, from the latest z release of your current version, to the latest version of OpenShift available. Select the latest version, in our case 4.17.6, and click the blue *upgrade* button.
+. A new window appears with a drop-down menu allowing you to select from a number of acceptable release versions, from the latest z release of your current version, to the latest version of OpenShift available. Our graphic here shows the latest version as 4.17.6, but in your drop down that may differ. Select the latest version available, and click the blue *upgrade* button.
 +
 image::upgrade/upgrade_version.png[link=self, window=blank, width=100%]
 +
@@ -81,7 +78,7 @@ image::upgrade/control_plane_status_upgrading.png[link=self, window=blank, width
 +
 image::upgrade/kube_api_degraded.png[link=self, window=blank, width=100%]
 
-. Along the way we will recieve live updates as the upgrade process progresses.
+. As the upgrade progresses we will continue to see live updates on *Control plane status* tile.
 +
 image::upgrade/cluster_version_progressing_1.png[link=self, window=blank, width=100%]
 +
@@ -97,4 +94,4 @@ image::upgrade/admin_overview_upgrade_complete.png[link=self, window=blank, widt
 
 == Summary
 
-In this module we explored how the upgrade of an OpenShift on OpenShift with Hosted Control Planes cluster differs from a standalone deployment. After exploring our various upgrade options we kicked off an upgrade process to the latest version of OpenShift.
+In this module we explored how the upgrade process of an OpenShift on OpenShift with hosted control planes cluster differs from a standalone deployment. After exploring our various upgrade options we kicked off an upgrade process to the latest version of OpenShift.
