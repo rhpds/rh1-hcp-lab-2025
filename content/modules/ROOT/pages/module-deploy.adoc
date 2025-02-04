@@ -2,7 +2,7 @@
 
 == Introduction
 
-The beginning section of this lab will introduce you to the basics of using Advanced Cluster Management for Kubernetes (RHACM) and the Multicluster Engine operator to deploy an OpenShift on OpenShift Virtualization cluster using Hosted Control Planes as the provider.
+The beginning section of this lab will introduce you to the basics of using Advanced Cluster Management for Kubernetes (RHACM) and the Multicluster Engine operator to deploy an OpenShift on OpenShift Virtualization cluster using hosted control planes as the provider.
 
 *Goals*
 
@@ -41,7 +41,7 @@ image::deploy/local_cluster_overview.png[link=self, window=blank, width=100%]
 +
 NOTE: For the purpose of this lab please note that we are hosting the environment in Google Cloud. This is not a supported environment for production use at this time. For production use, please see the release notes available https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html-single/hosted_control_planes/index[here^].
 
-. Click on the *Add-ons* tab, in the list you will see the *hypershift-addon* listed. This is required for the deployment of Hosted Control Planes.
+. Click on the *Add-ons* tab, in the list you will see the *hypershift-addon* listed. This is required for the deployment of hosted control planes.
 +
 image::deploy/local_cluster_addons.png[link=self, window=blank, width=100%]
 
@@ -84,7 +84,7 @@ image::deploy/create_cluster.png[link=self, window=blank, width=100%]
 +
 image::deploy/infrastructure_provider.png[link=self, window=blank, width=100%]
 
-. This will take you to a page titled *Control plane type - OpenShift Virtualization*. There is a tile here called *Hosted* which also mentioned the benefits of using Hosted Control Planes to deploy your OpenShift cluster. Click it.
+. This will take you to a page titled *Control plane type - OpenShift Virtualization*. There is a tile here called *Hosted* which also mentioned the benefits of using hosted control planes to deploy your OpenShift cluster. Click it.
 +
 image::deploy/control_plane_type_hosted.png[link=self, window=blank, width=100%]
 
@@ -237,4 +237,4 @@ IMPORTANT: *Do not scale the cluster at this time! We will work with node pools 
 
 == Summary
 
-In this module of our lab we have deployed a hosted OpenShift cluster on OpenShift by using Hosted Control Planes. We explored the pods that make up the control plane, and the virtual machines that make up the worker node pool.
+In this module of our lab we have deployed a hosted OpenShift cluster on OpenShift by using hosted control planes. We explored the pods that make up the control plane, and the virtual machines that make up the worker node pool.
