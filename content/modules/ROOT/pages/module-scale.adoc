@@ -68,11 +68,11 @@ image::scale/apache_test_page.png[link=self, window=blank, width=100%]
 
 Now that our application is deployed and running we are going to see autoscaling live in action, but first we have to enable it if it isn't already. 
 
-. Click on the tab that takes us back to our hosting cluster and back up to the *Cluster node pools* section. We can see that there are still just 2 nodes in *my-node-pool*, but we can also see that *Autoscaling* is set to *Faluse*
+. Click on the tab that takes us back to our hosting cluster and back up to the *Cluster node pools* section. We can see that there are still just 2 nodes in *my-node-pool*, but we can also see that *Autoscaling* is set to *False*
 +
 image::scale/cluster_node_pools.png[link=self, window=blank, width=100%]
 
-. Return to the terminal at the right of your showroom and ssh to the bastion host once again.
+. Return to the terminal at the right of your showroom and ssh to the bastion host once again if needed.
 +
 image::scale/ssh_bastion.png[link=self, window=blank, width=100%]
 
@@ -97,11 +97,11 @@ image::scale/scale_application.png[link=self, window=blank, width=100%]
 +
 image::scale/out_of_resources.png[link=self, window=blank, width=100%]
 
-. Return to the tab that shows the information for the hosting cluster, and we should see the size of the node pool dynamically update.
+. Return to the tab that shows the information for the hosting cluster, and we should see the size of the node pool begin to dynamically update.
 +
 image::scale/node_pool_update.png[link=self, window=blank, width=100%] 
 
-. While we are waiting for the autoscale action to complete, you can visit the *local-cluster* and click on left-side menu for *Virtualization* and *VirtualMachines* to see the newly added third machine.
+. While we are waiting for the autoscale action to complete, which can take about 10 minutes, you can visit the *local-cluster* and click on left-side menu for *Virtualization* and *VirtualMachines* to see the newly added third machine.
 +
 image::scale/new_vm.png[link=self, window=blank, width=100%]
 
@@ -113,7 +113,7 @@ image::scale/nodepool_autoscale_ready.png[link=self, window=blank, width=100%]
 +
 image::scale/nodes_menu.png[link=self, window=blank, width=100%]
 
-. Now click on the tab to our hosted cluster and lets check on our *my-apache* application and it's pending replicas. Since we have successfully autoscaled the cluster, the pending pods should now have found homes.
+. Now click on the tab to our hosted cluster and lets check on our *my-httpd* application and it's pending replicas. Since we have successfully autoscaled the cluster, the pending pods should now have found homes and completed the scale up to 10 instances.
 +
 image::scale/all_app_replicas.png[link=self, window=blank, width=100%]
 
@@ -121,7 +121,7 @@ image::scale/all_app_replicas.png[link=self, window=blank, width=100%]
 [[clean-up]]
 == Delete the Application and Scale Down the Cluster
 
-Once we are done with the need for extra resources we will need to scale down our cluster. Eventually it will dynamically scale down after some time, but if we don't want to wait for this process, we may need to perform the action manually.
+Once the additional resources are no longer needed to support the application, the the number of nodes in the hosted cluster can dynamically scale back down to free up resources in the hosting cluster. Lets try that now.
 
 . First lets clean up our application and free up those resources.
 
@@ -150,7 +150,9 @@ image::scale/nodes_menu_2.png[link=self, window=blank, width=100%]
 [NOTE]
 .Manually scaling the NodePool
 ====
-If you do not have the time to wait for the cluster to autoscale it is perfectly acceptable to manually scale it back to 2 nodes. Follow these next steps to perform that action if necessary.
+When autoscaling is enabled you will lose the ability to scale worker nodes manually. 
+
+However, if your cluster had not been configured autoscaling, then it is perfectly acceptable to manually scale it up to 3 and back down to 2 nodes to provide the resources you need. Follow these next steps to perform that action if necessary.
 
 . Click on the three-dot menu to the right side of the *Cluster node pools* section, and when the drop down menu appears click on *Manage node pool.*
 +
@@ -163,4 +165,4 @@ image::scale/two_nodes.png[link=self, window=blank, width=100%]
 
 == Summary
 
-In this section we learned about one of the major benefits of Hosted Control Planes and NodePools which is the ability to autoscale up and down on demand when an application requests more resources than are currently available in the cluster, or when an application is deleted and frees up those resources.
+In this section we learned about one of the major benefits of hosted control planes and NodePools which is the ability to autoscale up and down on demand when an application requests more resources than are currently available in the cluster, or when an application is deleted and frees up those resources.
